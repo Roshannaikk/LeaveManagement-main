@@ -382,23 +382,27 @@ Role	Routes all requests
 Feature	Details
 Port	5265
 Function	Login & token generation
-Security	JWT आधारित authentication
+Security	JWT authentication
+
 👥 Employee Service
 Feature	Details
 Port	5219
 Function	Manage employee data
 Operations	Create, Update, Delete, View
+
 📝 Leave Service
 Feature	Details
 Port	5555
 Function	Handle leave requests
 Status	Pending, Approved, Rejected
+
 🔔 Notification Service
 Feature	Details
 Port	5004
 Function	Send Email & SMS
 Database	MongoDB
 Tools	NodeMailer, Twilio
+
 💻 Frontend Application
 Feature	Description
 Framework	React.js
@@ -411,6 +415,7 @@ Employee Dashboard
 Apply Leave
 Leave History
 Notification Logs
+
 🚀 Installation Guide
 🔹 Step 1: Clone Repository
 git clone <repo-url>
@@ -428,6 +433,7 @@ Frontend
 cd frontend-ui
 npm install
 npm start
+
 🔹 Step 3: Start Backend Services
 Run Auth Service (.NET)
 Run Employee Service (.NET)
