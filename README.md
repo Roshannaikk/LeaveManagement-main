@@ -322,16 +322,6 @@ Authorization: Bearer <your-token>
 
 ---
 
-If you want next upgrade 🔥
-I can:
-
-* Add **GitHub badges (build, version, license)**
-* Add **screenshots UI section**
-* Create **PPT for viva / demo script**
-
-Just say 👍
-using multiple independent services, making it scalable and easy to maintain.
-
 ⭐ Key Features
 Feature	Description
 🔐 Authentication	Secure login using JWT tokens
@@ -344,9 +334,7 @@ Feature	Description
 
 The system follows a microservices architecture.
 
-Component	Role	Technology
-Frontend	User Interface	React.js
-API Gateway	Request routing	Node.js (Express)
+Component	Role	Technology Frontend	User Interface	React.js API Gateway	Request routing	Node.js (Express)
 Auth Service	Login & security	.NET Core
 Employee Service	Employee data	.NET Core
 Leave Service	Leave processing	Python (Flask)
