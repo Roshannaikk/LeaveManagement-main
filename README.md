@@ -1,88 +1,102 @@
 🚀 LeaveBot System
 
-A modern Leave Management System built using microservices architecture. It helps companies manage employee leave requests, approvals, and notifications easily.
+A microservices-based Leave Management System designed to manage employee leave requests, approvals, and notifications in an efficient and scalable way.
 
 📌 Project Overview
-🔹 What is LeaveBot?
 
-LeaveBot is a system where:
+LeaveBot System is a smart application that helps organizations:
 
-Employees can apply for leave
-Admins can approve or reject requests
-Notifications (Email/SMS) are sent automatically
+Manage employee leave requests
+Automate approval workflows
+Send real-time notifications (Email/SMS)
+Maintain complete records and logs
 
-It makes leave management fast, organized, and user-friendly.
+👉 The system is built using multiple independent services, making it scalable and easy to maintain.
 
 ⭐ Key Features
-🔐 Secure Login (JWT authentication)
-👥 Employee Management (Add, update, delete employees)
-📝 Leave Requests (Apply, approve, reject)
-🔔 Notifications (Email & SMS alerts)
-📊 Dashboard (Admin & Employee views)
-📁 Logs (All notifications saved)
-🏗️ System Architecture (Simple Explanation)
+Feature	Description
+🔐 Authentication	Secure login using JWT tokens
+👥 Employee Management	Add, update, delete employee details
+📝 Leave Requests	Apply, approve, reject leave
+🔔 Notifications	Email & SMS alerts for actions
+📊 Dashboard	Real-time stats for admin & employees
+📁 Logs	Store notification history
+🏗️ System Architecture
 
-The system is divided into small services:
+The system follows a microservices architecture.
 
-Frontend (React) → User interface
-API Gateway → Controls all requests
-Auth Service → Login & security
-Employee Service → Employee data
-Leave Service → Leave handling
-Notification Service → Email & SMS
-
-👉 Each service works independently but communicates using APIs.
-
-🔄 How the System Works
-1. Login
-User enters email & password
-System verifies and gives a token
-User is redirected based on role
+Component	Role	Technology
+Frontend	User Interface	React.js
+API Gateway	Request routing	Node.js (Express)
+Auth Service	Login & security	.NET Core
+Employee Service	Employee data	.NET Core
+Leave Service	Leave processing	Python (Flask)
+Notification Service	Email & SMS	Node.js
+Database (SQL)	Main data storage	SQL Server
+Database (NoSQL)	Logs storage	MongoDB
+🔄 System Workflow
+1. User Login
+User enters credentials
+Auth Service verifies
+JWT token is generated
+User is redirected to dashboard
 2. Apply Leave
-Employee fills form
-Leave is saved in database
-Notification is sent to admin
-3. Approve/Reject Leave
+Employee fills leave form
+Leave Service stores request
+Notification sent to admin
+3. Approve / Reject Leave
 Admin reviews request
-Approves or rejects
-Employee gets notification
-4. Add Employee
+Updates status
+Notification sent to employee
+4. Employee Creation
 Admin adds new employee
-System sends welcome email
-🔧 Services Overview
-1. API Gateway
-Entry point for all requests
-Routes requests to correct service
-2. Auth Service
-Handles login & security
-Generates JWT token
-3. Employee Service
-Manages employee data
-Add / Update / Delete employees
-4. Leave Service
-Handles leave requests
-Tracks status (Pending, Approved, Rejected)
-5. Notification Service
-Sends Email & SMS
-Saves logs in MongoDB
-💻 Frontend
+Welcome email is sent automatically
+🔧 Services Breakdown
+📡 API Gateway
+Property	Value
+Port	8080
+Role	Routes all requests
 
-Built using:
+👉 Acts as the single entry point for all services.
 
-React.js
-Tailwind CSS
-Pages:
+🔐 Auth Service
+Feature	Details
+Port	5265
+Function	Login & token generation
+Security	JWT आधारित authentication
+👥 Employee Service
+Feature	Details
+Port	5219
+Function	Manage employee data
+Operations	Create, Update, Delete, View
+📝 Leave Service
+Feature	Details
+Port	5555
+Function	Handle leave requests
+Status	Pending, Approved, Rejected
+🔔 Notification Service
+Feature	Details
+Port	5004
+Function	Send Email & SMS
+Database	MongoDB
+Tools	NodeMailer, Twilio
+💻 Frontend Application
+Feature	Description
+Framework	React.js
+Styling	Tailwind CSS
+API Calls	Axios
+Main Pages:
 Login Page
 Admin Dashboard
 Employee Dashboard
 Apply Leave
-View Leaves
+Leave History
 Notification Logs
-🚀 Setup (Simple Steps)
-1. Clone Project
+🚀 Installation Guide
+🔹 Step 1: Clone Repository
 git clone <repo-url>
-cd project-folder
-2. Start Services
+cd project
+🔹 Step 2: Start Services
 Notification Service
 cd Services/Notification.API
 npm install
@@ -95,43 +109,52 @@ Frontend
 cd frontend-ui
 npm install
 npm start
-3. Start Other Services
-Run Auth (.NET)
-Run Employee (.NET)
-Run Leave (Python)
-🔗 API Usage
-
-All requests go through:
-
-http://localhost:8080
-
-Example:
-
-POST /api/auth/login
-POST /api/leave/apply
+🔹 Step 3: Start Backend Services
+Run Auth Service (.NET)
+Run Employee Service (.NET)
+Run Leave Service (Python)
+🔗 API Endpoints
+Method	Endpoint	Description
+POST	/api/auth/login	User login
+POST	/api/leave/apply	Apply leave
+GET	/api/employees	Get employees
+PUT	/api/leave/{id}/approve	Approve leave
+POST	/notifications/send-email	Send email
 🔐 Authentication
 
-Use JWT token in header:
+All protected APIs require JWT token:
 
 Authorization: Bearer <token>
-⚠️ Common Issues
-❌ Email not sending
-Check SMTP settings
-Check password
-❌ API not working
-Make sure all services are running
-❌ MongoDB error
-Start MongoDB
-Check connection string
-💡 Why This Project is Good
-Uses microservices (industry-level)
-Multiple technologies used
-Real-world problem solving
-Scalable and modular design
-📌 Conclusion
+📊 Database Design
+SQL Server (Main Data)
+Table	Purpose
+users_auth	Store login data
+employees	Employee details
+leaves	Leave records
+MongoDB (Logs)
+Collection	Purpose
+notification_logs	Store email & SMS logs
+⚠️ Troubleshooting
+Problem	Solution
+Email not sending	Check SMTP settings
+API not working	Ensure all services running
+MongoDB error	Start MongoDB service
+Login failed	Check JWT configuration
+💡 Advantages of LeaveBot
+✔ Microservices architecture
+✔ Scalable system design
+✔ Real-world application
+✔ Multi-technology integration
+✔ Easy to maintain
+📌 Future Improvements
+🤖 AI-based leave prediction
+📱 Mobile application
+📊 Advanced analytics dashboard
+🌐 Cloud deployment (AWS/Azure)
+🏁 Conclusion
 
-LeaveBot is a complete smart leave management system that:
+LeaveBot System is a complete and modern leave management solution that:
 
-Saves time
-Improves organization
-Automates communication
+Simplifies employee leave process
+Improves communication
+Provides scalable architecture
